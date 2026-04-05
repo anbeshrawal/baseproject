@@ -1,3 +1,5 @@
+using System.Data;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.InputSystem.XInput;
 
@@ -62,6 +64,7 @@ public class Jump : BaseStates
  
     private void Animationchecker(StateManager stateManager)
     {
+        float vely = maped(stateManager.rb.linearVelocity.y,-stateManager.jumpspeed, stateManager.jumpspeed, 0f, 1f, true);
         if (stateManager.rb.linearVelocity.y > 0f && jumpCounter == 0)
         {
             stateManager.animator.Play("Jump");
@@ -74,6 +77,10 @@ public class Jump : BaseStates
         {
             stateManager.animator.Play("Triple_Jump");
         }
+        if (stateManager.rb.linearVelocity.y < 0f)
+        {
+            stateManager.animator.Play("Fall", 0, vely);
+        }
         else if (stateManager.rb.linearVelocity.y == 0f)
         {
             stateManager.SwitchState(stateManager.Idle);
@@ -85,5 +92,13 @@ public class Jump : BaseStates
         {
             stateManager.isGrounded = true;
         }
-}
+    }
+
+public float maped(float value, float min, float max, float newMin, float newMax, bool clamp)
+    {
+        float new_value = (value -  min) / ( max -  min) * (newMax - newMin) + newMin;
+
+        return new_value;
+
+    }
 }
