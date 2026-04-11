@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class StateManager : MonoBehaviour
@@ -6,7 +8,10 @@ BaseStates currentState;
 
 public Attack1 Attack1 = new Attack1();
 public Attack2 Attack2 = new Attack2();
+
+public Attack3 Attack3 = new Attack3();
 public Idle Idle = new Idle();
+public Prayheal Prayheal = new Prayheal();
 public Walk Walk = new Walk();
 public Run Run = new Run();
 public Jump Jump = new Jump();
@@ -23,6 +28,7 @@ public int facingDirection = 1;
 
 public float jumpspeed = 5f;
 public Transform JumpPoint;
+public Transform GroundCheck;
 public GameObject jsword;
 
 #endregion
@@ -71,6 +77,8 @@ void Update()
 {
     currentState.UpdateState(this); 
     CheckCollision();
+    fallcheck();
+    Debug.Log(rb.linearVelocity.y);
 }
 
 public void SwitchState(BaseStates state)
@@ -82,13 +90,27 @@ public void SwitchState(BaseStates state)
 #region GroundCheck
 public void CheckCollision()
     {
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, whatisGround);
+        isGrounded = Physics2D.Raycast(GroundCheck.position, Vector2.down, groundDistance, whatisGround);
         canmove = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, whatisGround);
+    }
+
+    void fallcheck()
+    {
+        float vely = maped(rb.linearVelocity.y, -jumpspeed, jumpspeed, 0f, 1f, true);
+        if (!isGrounded && rb.linearVelocity.y < 0f)
+        {
+           animator.Play("Fall", 0, vely);
+        }
+        else if (isGrounded && rb.linearVelocity.x == 0f)
+        {
+            currentState = Idle;
+            currentState.EnterState(this);
+        }
     }
 
 private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundDistance));
+        Gizmos.DrawLine(GroundCheck.position, GroundCheck.position + new Vector3(0, -groundDistance));
     }
 #endregion
 
@@ -144,6 +166,14 @@ public void knockback(int KBF)
             Debug.Log("death");
             Destroy(gameObject);
         }
+    }
+
+    public float maped(float value, float min, float max, float newMin, float newMax, bool clamp)
+    {
+        float new_value = (value -  min) / ( max -  min) * (newMax - newMin) + newMin;
+
+        return new_value;
+
     }
 
 }

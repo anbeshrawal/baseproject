@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 5e4b701d94b1b4416af79d2893d7eb23
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7364462178904259883
+    second: praying_0
+  - first:
+      213: -3807214155010411535
+    second: praying_1
+  - first:
+      213: -7454551935060638864
+    second: praying_2
+  - first:
+      213: -3205385338588486402
+    second: praying_3
+  - first:
+      213: 3585959712594162217
+    second: praying_4
+  - first:
+      213: 4314093436281373418
+    second: praying_5
+  - first:
+      213: -5391075130565529014
+    second: praying_6
+  - first:
+      213: -3393222078834899772
+    second: praying_7
+  - first:
+      213: 2266497028923316254
+    second: praying_8
+  - first:
+      213: 4670504900809678879
+    second: praying_9
+  - first:
+      213: -5045773237251676182
+    second: praying_10
+  - first:
+      213: -7253240375816999748
+    second: praying_11
+  - first:
+      213: -18893003874714136
+    second: praying_12
+  - first:
+      213: -7815976492260702478
+    second: praying_13
+  - first:
+      213: -2834780477065801971
+    second: praying_14
+  - first:
+      213: -3042834459131293024
+    second: praying_15
+  - first:
+      213: -2680070123030361493
+    second: praying_16
+  - first:
+      213: -4190046168614909684
+    second: praying_17
+  - first:
+      213: -4608280119671234290
+    second: praying_18
+  - first:
+      213: 3292395296491389820
+    second: praying_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: praying_0
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 4411
+        width: 270
+        height: 740
+      alignment: 9
+      pivot: {x: 0.50000024, y: 0.533925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d33674553d33660800000000000000
+      internalID: 7364462178904259883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_1
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 4424
+        width: 239
+        height: 724
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54334307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3f3c2c5ee0a2bc0800000000000000
+      internalID: -3807214155010411535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_2
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 4427
+        width: 306
+        height: 396
+      alignment: 9
+      pivot: {x: 0.5205102, y: 0.9754651}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073820fc28c1c8890800000000000000
+      internalID: -7454551935060638864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_3
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 4422
+        width: 397
+        height: 360
+      alignment: 9
+      pivot: {x: 0.5, y: 1.106335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef42035740f2483d0800000000000000
+      internalID: -3205385338588486402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3330
+        width: 250
+        height: 746
+      alignment: 9
+      pivot: {x: 0.49999988, y: 0.5252391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92279000c53e3c130800000000000000
+      internalID: 3585959712594162217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_5
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 3342
+        width: 235
+        height: 717
+      alignment: 9
+      pivot: {x: 0.52670586, y: 0.5350129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2456d8f1dbedb30800000000000000
+      internalID: 4314093436281373418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_6
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 4048
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42f23d5bbd0f25b0800000000000000
+      internalID: -5391075130565529014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_7
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 3342
+        width: 353
+        height: 345
+      alignment: 9
+      pivot: {x: 0.49999863, y: 1.1003269}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c488035f7ad8e0d0800000000000000
+      internalID: -3393222078834899772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_8
+      rect:
+        serializedVersion: 2
+        x: 3560
+        y: 3342
+        width: 414
+        height: 361
+      alignment: 9
+      pivot: {x: 0.4999994, y: 1.106335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18d3751a07347f10800000000000000
+      internalID: 2266497028923316254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_9
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 2252
+        width: 246
+        height: 742
+      alignment: 9
+      pivot: {x: 0.49999988, y: 0.53383386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f106b7e3677f0d040800000000000000
+      internalID: 4670504900809678879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_10
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2262
+        width: 247
+        height: 631
+      alignment: 9
+      pivot: {x: 0.49999902, y: 0.5994639}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae7e07079ffc9f9b0800000000000000
+      internalID: -5045773237251676182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_11
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 2261
+        width: 380
+        height: 340
+      alignment: 9
+      pivot: {x: 0.49999934, y: 1.1276152}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc28e8be40575b90800000000000000
+      internalID: -7253240375816999748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_12
+      rect:
+        serializedVersion: 2
+        x: 3558
+        y: 2262
+        width: 416
+        height: 363
+      alignment: 9
+      pivot: {x: 0.49999884, y: 1.106335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8edbe4fb9e0ecbff0800000000000000
+      internalID: -18893003874714136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_13
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1172
+        width: 245
+        height: 740
+      alignment: 9
+      pivot: {x: 0.5256167, y: 0.52544373}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f64ff58ac2188390800000000000000
+      internalID: -7815976492260702478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_14
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 1182
+        width: 255
+        height: 539
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6979496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0fc748ec26d8a8d0800000000000000
+      internalID: -2834780477065801971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_15
+      rect:
+        serializedVersion: 2
+        x: 2509
+        y: 1182
+        width: 378
+        height: 337
+      alignment: 9
+      pivot: {x: 0.48339584, y: 1.1518258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a259295e2ea5c5d0800000000000000
+      internalID: -3042834459131293024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_16
+      rect:
+        serializedVersion: 2
+        x: 3553
+        y: 1182
+        width: 423
+        height: 365
+      alignment: 9
+      pivot: {x: 0.5, y: 1.106335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a43a73c6a7ecad0800000000000000
+      internalID: -2680070123030361493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_17
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 105
+        width: 234
+        height: 727
+      alignment: 9
+      pivot: {x: 0.49999988, y: 0.51726604}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c09c83f9537f9d5c0800000000000000
+      internalID: -4190046168614909684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_18
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 103
+        width: 282
+        height: 484
+      alignment: 9
+      pivot: {x: 0.49999955, y: 0.77231246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01608995a91c00c0800000000000000
+      internalID: -4608280119671234290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: praying_19
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 102
+        width: 385
+        height: 344
+      alignment: 9
+      pivot: {x: 0.4999981, y: 1.1063347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c73498b0410f0bd20800000000000000
+      internalID: 3292395296491389820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 30b63e05faaec49ee82e32512804ae1d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      praying_0: 7364462178904259883
+      praying_1: -3807214155010411535
+      praying_10: -5045773237251676182
+      praying_11: -7253240375816999748
+      praying_12: -18893003874714136
+      praying_13: -7815976492260702478
+      praying_14: -2834780477065801971
+      praying_15: -3042834459131293024
+      praying_16: -2680070123030361493
+      praying_17: -4190046168614909684
+      praying_18: -4608280119671234290
+      praying_19: 3292395296491389820
+      praying_2: -7454551935060638864
+      praying_3: -3205385338588486402
+      praying_4: 3585959712594162217
+      praying_5: 4314093436281373418
+      praying_6: -5391075130565529014
+      praying_7: -3393222078834899772
+      praying_8: 2266497028923316254
+      praying_9: 4670504900809678879
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
