@@ -33,6 +33,7 @@ public class Attack3 : BaseStates
         {
             if(stateManager.stamina >= 10f) 
             Object.Instantiate(stateManager.sword, stateManager.Attackpoint.position, stateManager.Attackpoint.rotation);
+            stateManager.isattacking = false;
             stateManager.SwitchState(stateManager.Idle);
         }
     }

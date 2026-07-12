@@ -29,10 +29,12 @@ public class Attack1 : BaseStates
     {
         if(stateManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.95f  && stateManager.animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
         {
+            stateManager.isattacking = false;
             stateManager.SwitchState(stateManager.Idle);
         }
         else if(stateManager.animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
+           stateManager.isattacking = false;
            stateManager.SwitchState(stateManager.Idle);
         }
     }

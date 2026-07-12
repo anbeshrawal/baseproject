@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -250478359
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8927217917383641786, guid: 6e22b77c8461941fab4a727f3288a6ca, type: 3}
@@ -128,3 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   Fires: {fileID: 1131768601251901288, guid: aa3310300e2644e718622284082bc291, type: 3}
+  timer: 0
+  max: 0
+  min: 0
+  endtime: 0

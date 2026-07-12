@@ -46,11 +46,13 @@ public class Idle : BaseStates
                 if(random == 1)
                 {
                     stateManager.canmove = false;
+                    stateManager.isattacking = true;
                     stateManager.SwitchState(stateManager.Attack1);
                 }
                 else if(random == 2)
                 {
                     stateManager.canmove = false;
+                    stateManager.isattacking = true;
                     stateManager.SwitchState(stateManager.Attack2);
                 }
         }

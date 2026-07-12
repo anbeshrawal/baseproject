@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: 3e2a7635885664747a27e70068bdd458
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3772162369947126481
+    second: Long fall_0
+  - first:
+      213: 7494707602361890167
+    second: Long fall_1
+  - first:
+      213: -4269755768114434079
+    second: Long fall_2
+  - first:
+      213: -8134685730854718150
+    second: Long fall_3
+  - first:
+      213: 6624587969659459422
+    second: Long fall_4
+  - first:
+      213: 287575936526885063
+    second: Long fall_5
+  - first:
+      213: -6591561921305257123
+    second: Long fall_6
+  - first:
+      213: -2132771870166899381
+    second: Long fall_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Long fall_0
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 1258
+        width: 453
+        height: 373
+      alignment: 9
+      pivot: {x: 0.4913287, y: 1.0054781}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f25b4307f4696abc0800000000000000
+      internalID: -3772162369947126481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long fall_1
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 1252
+        width: 457
+        height: 394
+      alignment: 9
+      pivot: {x: 0.5171895, y: 0.9699391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 775333e0bdc820860800000000000000
+      internalID: 7494707602361890167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long fall_2
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 1258
+        width: 455
+        height: 338
+      alignment: 9
+      pivot: {x: 0.5, y: 1.1035149}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef2dd340c7ceb4c0800000000000000
+      internalID: -4269755768114434079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long fall_3
+      rect:
+        serializedVersion: 2
+        x: 3609
+        y: 1253
+        width: 394
+        height: 375
+      alignment: 9
+      pivot: {x: 0.5, y: 1.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3537fc5d6acb1f80800000000000000
+      internalID: -8134685730854718150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long fall_4
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 173
+        width: 299
+        height: 402
+      alignment: 9
+      pivot: {x: 0.49999958, y: 0.9599998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57d0eae8a34feb50800000000000000
+      internalID: 6624587969659459422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long fall_5
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 166
+        width: 251
+        height: 496
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8167735}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0a2a66accadf300800000000000000
+      internalID: 287575936526885063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long fall_6
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 169
+        width: 241
+        height: 644
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6097886}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5bdb9d2b511684a0800000000000000
+      internalID: -6591561921305257123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long fall_7
+      rect:
+        serializedVersion: 2
+        x: 3706
+        y: 169
+        width: 260
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5302143, y: 0.5606852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45a1c3b84fd662e0800000000000000
+      internalID: -2132771870166899381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3a97e78129af341caaf55eb5a9051c57
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Long fall_0: -3772162369947126481
+      Long fall_1: 7494707602361890167
+      Long fall_2: -4269755768114434079
+      Long fall_3: -8134685730854718150
+      Long fall_4: 6624587969659459422
+      Long fall_5: 287575936526885063
+      Long fall_6: -6591561921305257123
+      Long fall_7: -2132771870166899381
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

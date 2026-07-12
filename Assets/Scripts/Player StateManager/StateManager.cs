@@ -20,11 +20,15 @@ public Death Death = new Death();
 public Animator animator;
 public Rigidbody2D rb;
 
+public bool isDead = false;
+
 #region PlayerOrient and Movement
 public float xInput;
 public bool canmove = true;
 public bool isFacingRight = true;
 public int facingDirection = 1;
+
+public bool isfalling = false;
 
 public float jumpspeed = 5f;
 public Transform JumpPoint;
@@ -41,6 +45,7 @@ public float runSpeed = 4f;
 public float targetSpeed;
 public float velPower = 1.5f;
 public float frictionAmount = 0.1f;
+float groundist;
 
 public int damage = 10;
 
@@ -52,14 +57,18 @@ public int Health = 100;
 #region Attacks and Combos
     public Transform Attackpoint;
     public GameObject sword;
+    public bool isattacking;
 
 #endregion
 
 public bool canCombo = true;
 
 [SerializeField]protected float groundDistance;
-[SerializeField]protected LayerMask whatisGround;
+[SerializeField]public LayerMask whatisGround;
 [SerializeField] public bool isGrounded;
+
+public bool wasGrounded;
+public float lastFallingVelocity;
 
 void Awake()
 {
@@ -75,10 +84,11 @@ void Start()
 
 void Update()
 {
+    if (isDead) return;
+
     currentState.UpdateState(this); 
     CheckCollision();
     fallcheck();
-    Debug.Log(rb.linearVelocity.y);
 }
 
 public void SwitchState(BaseStates state)
@@ -86,6 +96,8 @@ public void SwitchState(BaseStates state)
     currentState = state;
     currentState.EnterState(this); 
 }
+
+
 
 #region GroundCheck
 public void CheckCollision()
@@ -96,17 +108,100 @@ public void CheckCollision()
 
     void fallcheck()
     {
-        float vely = maped(rb.linearVelocity.y, -jumpspeed, jumpspeed, 0f, 1f, true);
-        if (!isGrounded && rb.linearVelocity.y < 0f)
+       if (!isGrounded)
+    {
+        if (rb.linearVelocity.y < 0f)
         {
-           animator.Play("Fall", 0, vely);
+            isfalling = true;
+
+            lastFallingVelocity = rb.linearVelocity.y;
+
+            float vely = maped(
+                rb.linearVelocity.y,
+                -jumpspeed,
+                jumpspeed,
+                0f,
+                1f,
+                true
+            );
+
+            animator.Play("Fall", 0, vely);
         }
-        else if (isGrounded && rb.linearVelocity.x == 0f)
+    }
+
+    // Runs only once: the frame the player lands
+    if (!wasGrounded && isGrounded)
+    {
+        Debug.Log("Landing Velocity: " + lastFallingVelocity);
+
+        if (Mathf.Abs(lastFallingVelocity) > 7f)
+        {
+            animator.Play("Heavy Drop", 0, 0f);
+        }
+        else
         {
             currentState = Idle;
             currentState.EnterState(this);
         }
+
+        isfalling = false;
     }
+
+    wasGrounded = isGrounded;
+}
+
+
+ /*isfalling = true;
+        float vely = maped(rb.linearVelocity.y, -jumpspeed, jumpspeed, 0f, 1f, true);
+       float landingvel = rb.linearVelocity.y;
+       Debug.Log("Landing Velocity: " + landingvel);
+        if (!isGrounded && rb.linearVelocity.y < 0f)
+        {
+        animator.Play("Fall", 0, vely);
+        }
+    if (isGrounded)
+    {
+    if (Mathf.Abs(landingvel) > 10f)
+    {
+        animator.Play("Heavy Drop", 0, vely);
+        isfalling =false;
+    }
+    else if(!isfalling)
+    {
+    currentState = Idle;
+    currentState.EnterState(this); 
+    }
+    }}
+
+           //while(rb.linearVelocity.y == -0.1f)
+           //{
+          // RaycastHit2D hit = Physics2D.Raycast(GroundCheck.position, Vector2.down, 50f, whatisGround);  
+           //}
+            
+           // if(groundist < 4f)
+            {
+                animator.Play("Fall", 0, vely);
+                heavyfalling = false;
+                Debug.Log("falling");
+           // }
+            else if(groundist > 4f)
+          //  {
+                animator.Play("Heavy Fall", 0, vely);
+                heavyfalling = true;
+                Debug.Log("Heavy falling");
+                
+          //  }
+        }
+        else if (isGrounded && rb.linearVelocity.x == 0f && !isattacking && !heavyfalling)
+        {
+            currentState = Idle;
+            currentState.EnterState(this);
+        }
+        else if (isGrounded && rb.linearVelocity.x == 0f && !isattacking && heavyfalling)
+        {
+            animator.Play("Heavy Drop", 0, vely);
+            heavyfalling = false;
+        }*/
 
 private void OnDrawGizmos()
     {
@@ -140,12 +235,14 @@ void useStamina(float amount)
 
 public void takeDamage(int damage)
     {
+        if (isDead) return;
+
         Health -= damage;
+
         if (Health <= 0)
         {
-            Health = 0;
-            Debug.Log("Player is dead");
-            SwitchState(Death);
+        isDead = true;
+        SwitchState(Death);
         }
     }
 
@@ -175,5 +272,16 @@ public void knockback(int KBF)
         return new_value;
 
     }
+
+public void DestroyPlayer()
+{
+    Debug.Log("Player is being destroyed");
+    Destroy(gameObject);
+}
+
+public void HeavyDropFinished()
+{
+    SwitchState(Idle);
+}
 
 }
