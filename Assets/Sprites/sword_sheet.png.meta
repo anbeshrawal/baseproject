@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 350
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -151,12 +151,12 @@ TextureImporter:
       name: sword_sheet_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 8
-        width: 198
-        height: 610
+        x: 6
+        y: 704
+        width: 617
+        height: 167
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -173,12 +173,12 @@ TextureImporter:
       name: sword_sheet_1
       rect:
         serializedVersion: 2
-        x: 266
-        y: 8
-        width: 130
-        height: 610
+        x: 6
+        y: 508
+        width: 612
+        height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -195,13 +195,13 @@ TextureImporter:
       name: sword_sheet_2
       rect:
         serializedVersion: 2
-        x: 535
-        y: 8
-        width: 54
-        height: 609
+        x: 11
+        y: 302
+        width: 607
+        height: 89
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 89}
       customData: 
       outline: []
       physicsShape: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: sword_sheet_3
       rect:
         serializedVersion: 2
-        x: 728
+        x: 649
         y: 8
-        width: 131
+        width: 1
         height: 610
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -235,11 +235,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sword_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 48
+        width: 609
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05895628f46f4cc59764c9c24a31395
+      internalID: 44432042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0bdf64f56fbf74c6cb0b088d9423d0a6
     internalID: 0
     vertices: []
     indices: 
@@ -253,6 +275,7 @@ TextureImporter:
       sword_sheet_1: 7415632620541437760
       sword_sheet_2: -963053400250566650
       sword_sheet_3: 511328355723614414
+      sword_sheet_4: 44432042
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

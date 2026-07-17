@@ -30,12 +30,11 @@ public class JSword : MonoBehaviour
     {
         Debug.Log(hitInfo.name);
         if(hitInfo.CompareTag("Ground"))
-            rb.linearVelocity = Vector2.zero;
+            {rb.linearVelocity = Vector2.zero;
             Player.transform.position = Vector2.MoveTowards(transform.position, SpawnPoint.position, 10f);
             PlayerStateManager.isGrounded = true;
             PlayerStateManager.canmove = true;
-            animator.Play("SwordHit wall");
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 3f);}
 
 
         if(hitInfo.CompareTag("Enemy"))
