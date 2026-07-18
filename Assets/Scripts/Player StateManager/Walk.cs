@@ -38,23 +38,23 @@ public class Walk : BaseStates
 
    private void HandleInput(StateManager stateManager)
     {
-        stateManager.xInput = Input.GetAxisRaw("Horizontal");
+        stateManager.xInput = stateManager.input.moveInput;
         if (stateManager.xInput == 0)
         {
             stateManager.SwitchState(stateManager.Idle);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift) && stateManager.xInput != 0)
+        else if (stateManager.input.sprintPressed && stateManager.xInput != 0)
         {
             stateManager.SwitchState(stateManager.Run);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (stateManager.input.jumpPressed)
         {
         stateManager.isGrounded = false;
         stateManager.SwitchState(stateManager.Jump);
         }
         
-        if (Input.GetKeyDown(KeyCode.Mouse0) && stateManager.isGrounded == true)
+        if (stateManager.input.attackPressed && stateManager.isGrounded == true)
         {
                 int random = Random.Range(1, 2);
                 Debug.Log("Random: " + random);

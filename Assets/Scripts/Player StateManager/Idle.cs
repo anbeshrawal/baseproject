@@ -23,22 +23,22 @@ public class Idle : BaseStates
 
     private void HandleInput(StateManager stateManager)
     {
-        stateManager.xInput = Input.GetAxisRaw("Horizontal");
+        stateManager.xInput = stateManager.input.moveInput;
         if (stateManager.xInput != 0 && stateManager.isGrounded == true && stateManager.canmove == true)
         {
             stateManager.SwitchState(stateManager.Walk);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift) && stateManager.xInput != 0 && stateManager.isGrounded == true && stateManager.canmove == true)
+        else if (stateManager.input.sprintPressed && stateManager.xInput != 0 && stateManager.isGrounded == true && stateManager.canmove == true)
         {
             stateManager.SwitchState(stateManager.Run);
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (stateManager.input.jumpHeld)
         {
             stateManager.SwitchState(stateManager.Jump);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && stateManager.isGrounded == true)
+        if (stateManager.input.attackPressed && stateManager.isGrounded == true)
         {
 
                 int random = Random.Range(1, 3);

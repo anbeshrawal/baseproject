@@ -3,6 +3,7 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
 BaseStates currentState;
+public BaseStates CurrentState => currentState;
 
 public Attack1 Attack1 = new Attack1();
 public Attack2 Attack2 = new Attack2();
@@ -14,6 +15,7 @@ public Death Death = new Death();
 
 public Animator animator;
 public Rigidbody2D rb;
+public PlayerInputHandler input;
 
 #region PlayerOrient and Movement
 public float xInput;
@@ -59,6 +61,11 @@ void Awake()
 {
     animator = GetComponent<Animator>();
     rb = GetComponent<Rigidbody2D>();
+    input = GetComponent<PlayerInputHandler>();
+    if (input == null)
+    {
+        input = gameObject.AddComponent<PlayerInputHandler>();
+    }
 }
 
 void Start()

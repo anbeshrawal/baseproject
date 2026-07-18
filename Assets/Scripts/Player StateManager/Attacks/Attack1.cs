@@ -15,7 +15,7 @@ public class Attack1 : BaseStates
     {
         timer =- Time.deltaTime;
         exitstate(stateManager);
-        if (Input.GetKeyDown(KeyCode.Mouse0) && timer != 0)
+        if (stateManager.input.attackPressed && timer != 0)
         {
             stateManager.animator.SetTrigger("Attack1"); //switch to Combo
         }

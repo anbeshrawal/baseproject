@@ -17,7 +17,7 @@ public class Jump : BaseStates
     {
         Animationchecker(stateManager); 
         
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCounter < 3)
+        if (stateManager.input.jumpPressed && jumpCounter < 3)
         {
             Jumps(stateManager);
         }
