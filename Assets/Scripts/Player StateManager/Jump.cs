@@ -1,89 +1,202 @@
 using UnityEngine;
-using UnityEngine.InputSystem.XInput;
 
 public class Jump : BaseStates
 {
-    float jumpCounter;
-    float SJF = 0.7f;
+    private int jumpCounter;
+
+    private const float SecondJumpForce = 0.7f;
+    private const float HeavyLandingSpeed = 7f;
+
     public override void EnterState(StateManager stateManager)
     {
-        Jumps(stateManager);
-        stateManager.isGrounded = false;
         jumpCounter = 0;
-        Animationchecker(stateManager); 
+
+        stateManager.isGrounded = false;
+        stateManager.wasGrounded = false;
+        stateManager.isfalling = false;
+        stateManager.lastFallingVelocity = 0f;
+
+        JumpPlayer(stateManager);
     }
 
     public override void UpdateState(StateManager stateManager)
     {
-        Animationchecker(stateManager); 
-        
-        if (stateManager.input.jumpPressed && jumpCounter < 3)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCounter < 3)
         {
-            Jumps(stateManager);
-        }
-        
-     
-        if (stateManager.isGrounded == true)
-        {
-            jumpCounter = 0;
-            stateManager.SwitchState(stateManager.Idle);
+            JumpPlayer(stateManager);
         }
 
-        if(stateManager.rb.linearVelocity.y == 0f)
-        {
-            stateManager.SwitchState(stateManager.Idle);
-        }
+        CheckAnimationAndLanding(stateManager);
+
+        // Save the current grounded state for the next frame.
+        stateManager.wasGrounded = stateManager.isGrounded;
     }
 
-    private void Jumps(StateManager stateManager)
+    private void JumpPlayer(StateManager stateManager)
     {
+        // Prevent the previous fall velocity from being reused.
+        stateManager.lastFallingVelocity = 0f;
+        stateManager.isfalling = false;
+
         if (jumpCounter == 0)
         {
+            stateManager.rb.linearVelocity = new Vector2(
+                stateManager.rb.linearVelocity.x,
+                stateManager.jumpspeed
+            );
 
-            stateManager.rb.linearVelocity = new Vector2(stateManager.rb.linearVelocity.x, stateManager.jumpspeed);
-            jumpCounter++;
+            jumpCounter = 1;
+
+            stateManager.animator.Play("Jump", 0, 0f);
         }
         else if (jumpCounter == 1)
         {
-            stateManager.rb.linearVelocity = new Vector2(stateManager.rb.linearVelocity.x, stateManager.jumpspeed*SJF);
-            jumpCounter++;
+            stateManager.rb.linearVelocity = new Vector2(
+                stateManager.rb.linearVelocity.x,
+                stateManager.jumpspeed * SecondJumpForce
+            );
+
+            jumpCounter = 2;
+
+            stateManager.animator.Play("Jump", 0, 0.5f);
         }
-        else if (jumpCounter == 2 && stateManager.stamina >= 2f)
+        else if (
+            jumpCounter == 2 &&
+            stateManager.stamina >= 2f
+        )
         {
-            stateManager.rb.linearVelocity = new Vector2(stateManager.rb.linearVelocity.x, stateManager.jumpspeed*SJF);
-            jumpCounter++;
+            stateManager.rb.linearVelocity = new Vector2(
+                stateManager.rb.linearVelocity.x,
+                stateManager.jumpspeed * SecondJumpForce
+            );
+
+            stateManager.stamina -= 2f;
+            jumpCounter = 3;
+
+            stateManager.animator.Play("Triple_Jump", 0, 0f);
         }
         else
         {
             Debug.Log("No more jumps");
+        }
+    }
+
+    private void CheckAnimationAndLanding(
+        StateManager stateManager
+    )
+    {
+        float verticalVelocity =
+            stateManager.rb.linearVelocity.y;
+
+        // Player is airborne and falling.
+        if (
+            !stateManager.isGrounded &&
+            verticalVelocity < 0f
+        )
+        {
+            stateManager.isfalling = true;
+
+            // Continuously save the latest downward velocity.
+            stateManager.lastFallingVelocity =
+                verticalVelocity;
+
+            float fallAnimationTime = MapValue(
+                verticalVelocity,
+                -stateManager.jumpspeed,
+                stateManager.jumpspeed,
+                0f,
+                1f,
+                true
+            );
+
+            stateManager.animator.Play(
+                "Fall",
+                0,
+                fallAnimationTime
+            );
+        }
+
+        bool justLanded =
+            !stateManager.wasGrounded &&
+            stateManager.isGrounded &&
+            stateManager.isfalling;
+
+        if (!justLanded)
+        {
             return;
         }
+
+        float landingSpeed =
+            Mathf.Abs(
+                stateManager.lastFallingVelocity
+            );
+
+        Debug.Log(
+            "Landing speed: " + landingSpeed
+        );
+
+        jumpCounter = 0;
+
+        if (landingSpeed > HeavyLandingSpeed)
+        {
+            stateManager.animator.Play(
+                "Heavy Drop",
+                0,
+                0f
+            );
+
+            // Do not switch to Idle here.
+            // Use an animation event at the end
+            // of Heavy Drop.
+        }
+        else
+        {
+            stateManager.SwitchState(
+                stateManager.Idle
+            );
+        }
+
+        // Clear the old fall data so it cannot
+        // affect the next jump.
+        stateManager.isfalling = false;
+        stateManager.lastFallingVelocity = 0f;
     }
- 
-    private void Animationchecker(StateManager stateManager)
+
+    public override void OnTriggerEnter2D(
+        StateManager stateManager,
+        Collider2D collision
+    )
     {
-        if (stateManager.rb.linearVelocity.y > 0f && jumpCounter == 0)
-        {
-            stateManager.animator.Play("Jump");
-        }
-        if (stateManager.rb.linearVelocity.y > 0f && jumpCounter == 1)
-        {
-            stateManager.animator.Play("Jump",0,0.5f);
-        }
-        if (stateManager.rb.linearVelocity.y > 0f && jumpCounter == 2 && stateManager.stamina >= 5f)
-        {
-            stateManager.animator.Play("Triple_Jump");
-        }
-        else if (stateManager.rb.linearVelocity.y == 0f)
-        {
-            stateManager.SwitchState(stateManager.Idle);
-        }
-    }
-    public override void OnTriggerEnter2D(StateManager stateManager, Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.CompareTag("Ground"))
         {
             stateManager.isGrounded = true;
         }
-}
+    }
+
+    private float MapValue(
+        float value,
+        float min,
+        float max,
+        float newMin,
+        float newMax,
+        bool clamp
+    )
+    {
+        float mappedValue =
+            (value - min) /
+            (max - min) *
+            (newMax - newMin) +
+            newMin;
+
+        if (clamp)
+        {
+            mappedValue = Mathf.Clamp(
+                mappedValue,
+                newMin,
+                newMax
+            );
+        }
+
+        return mappedValue;
+    }
 }

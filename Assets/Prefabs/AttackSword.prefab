@@ -80,8 +80,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -250478359
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6580160932500289361, guid: 32fe81bf5ca0b4ae0a1c81a03357d706, type: 3}
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 25
   rb: {fileID: 63545805241813350}
+  damage: 10
 --- !u!61 &8294815417209052872
 BoxCollider2D:
   m_ObjectHideFlags: 0

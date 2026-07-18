@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class Death : BaseStates
 {
+    private StateManager currentStateManager;
     public override void EnterState(StateManager stateManager)
     {
+        currentStateManager = stateManager;
+        stateManager.animator.Play("Death", 0, 0f);
         Debug.Log("Player is dead");
-        Object.Destroy(stateManager.gameObject);
     }
 
     public override void UpdateState(StateManager stateManager)

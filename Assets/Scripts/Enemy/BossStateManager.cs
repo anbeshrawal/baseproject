@@ -65,7 +65,6 @@ public EWalkBack EWalkBack = new EWalkBack();
         Stage1 = false;
         Stage2 = true;
        }
-       Debug.Log("Enemy Health: " + Health); 
     }
 
 
