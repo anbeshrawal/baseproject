@@ -24,6 +24,6 @@ public class AttackSword : MonoBehaviour
         hitInfo.gameObject.GetComponent<BossStateManager>().takeDamage(damage);
         Debug.Log("Enemy Hit");
         }
-        Destroy(gameObject);
+        Destroy(gameObject,4f);
     } 
 }

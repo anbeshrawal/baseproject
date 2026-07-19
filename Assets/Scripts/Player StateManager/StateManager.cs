@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
+
+#region States
 BaseStates currentState;
 
 public Attack1 Attack1 = new Attack1();
@@ -16,6 +18,10 @@ public Walk Walk = new Walk();
 public Run Run = new Run();
 public Jump Jump = new Jump();
 public Death Death = new Death();
+
+public EdgeGrab EdgeGrab = new EdgeGrab();
+
+#endregion
 
 public Animator animator;
 public Rigidbody2D rb;
@@ -61,14 +67,46 @@ public int Health = 100;
 
 #endregion
 
+
 public bool canCombo = true;
 
+[Header("Ground Check")]
 [SerializeField]protected float groundDistance;
 [SerializeField]public LayerMask whatisGround;
 [SerializeField] public bool isGrounded;
 
 public bool wasGrounded;
 public float lastFallingVelocity;
+
+#region EdgeGrab
+[Header("Edge Grab")]
+public Transform ledgeCheck;
+public Transform wallcheck;
+public bool isTouchingLedge;
+public bool isTouchingWall;
+[SerializeField] public float wallcheckDistance;
+[SerializeField] public float climbforceX;
+[SerializeField] public float climbforceY;
+
+
+
+public bool canGrabLedge = false;
+public bool ledgeDetected;
+
+
+[Header("Offsets")]
+
+public float ledgeClimbXOffset1;
+public float ledgeClimbYOffset1;
+public float ledgeClimbXOffset2;
+public float ledgeClimbYOffset2;
+
+
+
+#endregion
+
+
+
 
 void Awake()
 {
@@ -88,6 +126,7 @@ void Update()
 
     currentState.UpdateState(this); 
     CheckCollision();
+    CheckWalls();
     fallcheck();
 }
 
@@ -99,12 +138,20 @@ public void SwitchState(BaseStates state)
 
 
 
-#region GroundCheck
+#region CheckSurroundings
 public void CheckCollision()
     {
         isGrounded = Physics2D.Raycast(GroundCheck.position, Vector2.down, groundDistance, whatisGround);
         canmove = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, whatisGround);
     }
+
+
+void CheckWalls()
+    {
+        isTouchingLedge = Physics2D.Raycast(ledgeCheck.position, Vector2.right * facingDirection, wallcheckDistance, whatisGround);
+        isTouchingWall = Physics2D.Raycast(wallcheck.position, Vector2.right * facingDirection, wallcheckDistance, whatisGround);
+    }
+
 
     void fallcheck()
     {
@@ -132,7 +179,6 @@ public void CheckCollision()
     // Runs only once: the frame the player lands
     if (!wasGrounded && isGrounded)
     {
-        Debug.Log("Landing Velocity: " + lastFallingVelocity);
 
         if (Mathf.Abs(lastFallingVelocity) > 7f)
         {
@@ -154,6 +200,8 @@ public void CheckCollision()
 private void OnDrawGizmos()
     {
         Gizmos.DrawLine(GroundCheck.position, GroundCheck.position + new Vector3(0, -groundDistance));
+        Gizmos.DrawLine(ledgeCheck.position, ledgeCheck.position + new Vector3(wallcheckDistance * facingDirection, 0));
+        Gizmos.DrawLine(wallcheck.position, wallcheck.position + new Vector3(wallcheckDistance * facingDirection, 0));
     }
 #endregion
 
@@ -231,5 +279,17 @@ public void HeavyDropFinished()
 {
     SwitchState(Idle);
 }
+
+
+public void EdgeGrabFinished()
+{
+    if(currentState is EdgeGrab edgeGrabState)
+    {
+        Debug.Log("Edge Grab Finished, switching to Idle");
+        EdgeGrab.FinishLedgeClimb(this);
+    }
+
+}
+
 
 }
